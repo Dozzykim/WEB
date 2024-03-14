@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    border: 10px solid black;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+    height: calc(400px * 3);
+    animation-name: slide;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+
+.slide img {
+    width: 800px;
+    height: 400px;
+}
+
+@keyframes slide {
+    33.333% {
+        top: 0;
+    }
+    66.666% {
+        top: -400px;
+    }
+    100% {
+        top: -800px;
+    }
+}
