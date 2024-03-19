@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개 연산자2
+    </title>
+    <script>
+        // 전개연산자 (함수 호출할 때 사용)
+        // :배열을 전개해서 함수의 매개변수로 전달해주는 연산자
+
+        function sample(...items) { /* 나머지 매개변수 사용하여 함수 정의 */
+            document.write(`items[0]: ${items[0]} <br>`)
+            document.write(`items[1]: ${items[1]} <br>`)
+            document.write(`items[2]: ${items[2]} <br>`)
+            document.write(`items[3]: ${items[3]} <br>`)
+        }
+
+        const arr = [1,2,3,4]
+        sample(...arr) /* 전개 연산자 사용하여 함수 호출 */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
