@@ -36,7 +36,7 @@ body {
     --text-noraml : 16px;
     
     /* 👩‍🏫 기본 사이즈 지정 */
-    --container-size : 1200px;
-    --container-lg-size: 1400px;
+    --container-size    : 1200px;
+    --container-lg-size : 1400px;
 
 }

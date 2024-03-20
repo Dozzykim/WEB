@@ -1,8 +1,10 @@
-/* reset */
-* {margin: 0; padding: 0; box-sizing: border-box;}
 
-a {text-decoration: none; color: black;}
-ul {list-style-type: none;}
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+a { text-decoration: none; color: black; }
+ul { list-style-type: none; }
+
 
 /* 헤더 */
 header {
@@ -14,19 +16,20 @@ header {
 .util {
     height: 40px;
     padding: 10px;
-    background-color: rgb(53, 197, 239);
-
+    background-color: #dce6ff;
 }
 
-.util .util-menu {float: right;} /* float를 쓰면 뒤에 나오는 요소에 영향을 미침 */
+.util .util-menu { float: right; }
 .util .util-menu li {
     display: inline-block;
     margin: 0 14px;
 }
+
+/* clearfix */
 .util .util-menu::after {
     display: block;
     content: '';
-    clear: both; /* 이걸해야 뒤에 나오는 요소가 float영향을 받지않음 */
+    clear: both;
 }
 
 /* menu */
@@ -43,7 +46,7 @@ header {
     transform: translateY(-50%);
 }
 
-/* menu - center*/
+/* menu - center */
 .menu .menu-center {
     position: absolute;
     left: 50%;
@@ -66,10 +69,12 @@ header {
     height: 80px;
     line-height: 80px;
     text-align: center;
-    background-color: rgb(114, 213, 243);
+    background-color: #668ef6;
     color: white;
-    font-size: 30px; /* 아이콘을 폰트형태로 가지고온거라 fontsize로 크기 설정해야함 */
+    font-size: 30px;
 }
+
+
 
 .menu .menu-center nav ul li {
     display: inline-block;
@@ -85,21 +90,22 @@ header {
     font-weight: bold;
 }
 
+
 .menu .menu-center nav ul li a:hover {
-    background-color: rgb(114, 213, 243);
+    background-color: #668ef6;
     color: white;
 }
 
-/* pc */
-.mobile {display: none;}
 
+/* pc */
+.mobile { display: none; }
 
 /* mobile */
-/* 반응형 */
-/* :디바이스 가로크기 960px 이하인 경우 */
+/* 반응형  */
+/* - 디바이스 가로 크기 960px 이하인 경우 */
 @media screen and (max-width: 960px) {
-    .pc {display: none;}
-    .mobile {display: inherit;}
+    .pc { display: none; }
+    .mobile { display: inherit; }
 }
 
 /* 모바일 스타일 */
@@ -107,8 +113,7 @@ nav.mobile ul li {
     height: 60px;
     line-height: 60px;
     text-align: center;
-    border-bottom: 1px solid black
-    ;
+    border-bottom: 1px solid black;
 }
 nav.mobile ul li a {
     display: block;
@@ -120,3 +125,10 @@ nav.mobile ul li a:hover {
     background-color: royalblue;
     color: white;
 }
+
+
+
+
+
+
+
