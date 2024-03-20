@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 생성</title>
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            // 버튼 및 입력 태그 선택
+            const btnCreate = document.getElementById('create')
+            const btnRemove = document.getElementById('remove')
+            const input = document.getElementById('input')
+            const $ul = document.querySelector('ul')
+            $ul.style.listStyleType = 'none' /* 리스트 마크 없앰 */
+
+            // 이벤트 핸들러 추가
+            btnCreate.addEventListener("click", add)
+            btnRemove.addEventListener ("click", remove)
+            input.addEventListener ("keyup", enter)
+
+            // 체크박스 완료 시, 이벤트
+        })
+        
+        // add() : 리스트 추가 기능
+        function add() {
+            const ul = document.getElementById('list')
+            const li = document.createElement('li')
+            
+            // 체크박스 추가
+            const checkbox = document.createElement('input')
+            checkbox.type = 'checkbox'
+            
+            
+            const input = document.getElementById('input')
+            const text = document.createTextNode(input.value)
+            
+            ul.appendChild(li)
+            li.appendChild(checkbox)    /* <li>입력내용</li> */
+            li.appendChild(text)    /* <li>입력내용</li> */
+            ul.appendChild(li)      /* <ul><li>입력내용</li></ul>  ul자식요소로 추가*/
+            input.value=''          /* 추가 후 입력상자 비우기 */
+
+            checkbox.addEventListener("change", () => {
+                const completeList = document.getElementById('complete')
+                // checkbox.checked : 체크여부; t/f
+                if(checkbox.checked) {
+                    li.style.textDecoration = 'line-through' /* 취소선 */
+                    completeList.appendChild(li)
+                    ul.removeChild(li)
+                } else {
+                    // completeList.removeChild(li) //주석처리 하지 않아도 실행됨
+                    li.style.textDecoration = 'none'
+                    ul.appendChild(li)
+                }
+            })
+        }
+        
+        // remove() : 리스트 삭제 기능
+        function remove() {
+            const ul = document.querySelector('#complete')
+            const lists = document.querySelectorAll('#complete li')
+            // 선택요소.removeChild(자식요소)
+            // : 선택요소의 지정한 자식요소를 삭제한다.
+            ul.removeChild(lists[0]) /* 첫번재 자식요소 삭제 */
+            // ul.removeChild(lists[lists.length-1]) /* 마지막 자식요소 삭제 */
+
+
+            // 선택요소.remove()
+            // : 모든 자식요소 삭제
+            // ul.remove()
+
+        }
+
+        // add() : 키보드 엔터 입력
+        function enter() {
+            if(event.keyCode == 13) {
+                add()
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>나만의 투두리스트</h1>
+    
+    <hr>
+    <h3>Todo List</h3>
+    <ul id="list"></ul>
+    <hr>
+    <h3>complete</h3>
+    <ul id="complete"></ul>
+    <hr>
+    <input type="text" name="input" id="input" placeholder="입력하세요">
+    <button id="create">추가</button>
+    <button id="remove">삭제</button>
+</body>
+</html>
